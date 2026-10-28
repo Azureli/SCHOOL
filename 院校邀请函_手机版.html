@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#060c18">
+<title>首届全国精英校企产教融合高峰论坛 · 院校邀请函</title>
+<style>
+:root{
+  --ink:#050a14;
+  --ink2:#0a1428;
+  --navy:#101f3d;
+  --navy2:#16294f;
+  --gold:#d8b571;
+  --gold-lt:#f7e8c4;
+  --gold-dp:#a97c37;
+  --seal:#a51e30;
+  --txt:#eaf0fa;
+  --muted:#9aacc9;
+  --line:rgba(216,181,113,.26);
+  --card:rgba(255,255,255,.038);
+  --serif:"Songti SC","STSong","Source Han Serif SC","Noto Serif SC","SimSun",serif;
+  --sans:"PingFang SC","HarmonyOS Sans SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:#03060d;color:var(--txt);font-family:var(--sans);
+  font-size:15px;line-height:1.85;overflow-x:hidden;letter-spacing:.2px;
+}
+.serif{font-family:var(--serif)}
+
+/* ---------- 舞台 ---------- */
+.stage{
+  position:relative;max-width:480px;margin:0 auto;min-height:100vh;overflow:hidden;
+  background:
+    radial-gradient(130% 55% at 50% -5%, #1d3a6d 0%, rgba(29,58,109,0) 62%),
+    radial-gradient(90% 40% at 100% 22%, #17305c 0%, rgba(23,48,92,0) 70%),
+    radial-gradient(100% 45% at 0% 78%, #16315e 0%, rgba(22,49,94,0) 68%),
+    linear-gradient(180deg,#050a14 0%,#081228 30%,#0b1a34 58%,#070f1f 82%,#050a14 100%);
+  box-shadow:0 0 90px rgba(0,0,0,.75);
+}
+/* 光晕 / 底纹 */
+.bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.bg .beam{
+  position:absolute;top:-18%;left:50%;width:160%;height:70%;transform:translateX(-50%);
+  background:conic-gradient(from 180deg at 50% 100%, rgba(216,181,113,.16), rgba(216,181,113,0) 18%, rgba(216,181,113,0) 82%, rgba(216,181,113,.16));
+  filter:blur(24px);opacity:.55;
+}
+.bg .glow{position:absolute;border-radius:50%;filter:blur(70px)}
+.bg .g1{width:280px;height:280px;top:6%;left:-90px;background:rgba(56,102,180,.30)}
+.bg .g2{width:240px;height:240px;top:38%;right:-100px;background:rgba(216,181,113,.16)}
+.bg .g3{width:320px;height:320px;bottom:6%;left:-110px;background:rgba(86,132,210,.18)}
+.bg .grid{
+  position:absolute;inset:0;opacity:.16;
+  background-image:linear-gradient(rgba(216,181,113,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(216,181,113,.16) 1px,transparent 1px);
+  background-size:44px 44px;
+  -webkit-mask-image:radial-gradient(80% 60% at 50% 30%,#000 0%,transparent 78%);
+          mask-image:radial-gradient(80% 60% at 50% 30%,#000 0%,transparent 78%);
+}
+.bg .noise{
+  position:absolute;inset:0;opacity:.05;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/></filter><rect width='120' height='120' filter='url(%23n)' opacity='.5'/></svg>");
+}
+.particles{position:absolute;inset:0;pointer-events:none}
+.particles i{position:absolute;bottom:-12px;width:3px;height:3px;border-radius:50%;background:var(--gold-lt);opacity:0;animation:rise linear infinite}
+@keyframes rise{
+  0%{transform:translateY(0) scale(.6);opacity:0}
+  12%{opacity:.75}
+  100%{transform:translateY(-105vh) scale(1.1);opacity:0}
+}
+
+/* ---------- 通用 ---------- */
+.wrap{position:relative;z-index:2;padding:0 24px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.34em;
+  color:var(--gold);text-transform:uppercase;
+}
+.eyebrow::before,.eyebrow::after{content:"";width:26px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.eyebrow::after{background:linear-gradient(90deg,var(--gold),transparent)}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--line) 18%,var(--line) 82%,transparent);margin:26px 0}
+.gold-text{
+  background:linear-gradient(100deg,#a97c37 0%,#f7e8c4 26%,#d8b571 48%,#fff5dd 62%,#c79a4f 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.sec{padding:52px 0 8px;position:relative;z-index:2}
+.sec-t{font-family:var(--serif);font-size:25px;line-height:1.35;font-weight:700;letter-spacing:2px}
+.sec-s{margin-top:8px;font-size:12px;letter-spacing:.22em;color:var(--gold);opacity:.9}
+.sec-lead{margin-top:16px;font-size:14px;color:#c6d3e8}
+
+/* 滚动入场 */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .85s cubic-bezier(.2,.7,.2,1),transform .85s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+.rv.d4{transition-delay:.32s}.rv.d5{transition-delay:.40s}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;z-index:2;padding:64px 0 30px;text-align:center}
+.hero .topmark{
+  display:inline-block;padding:6px 16px;border:1px solid var(--line);border-radius:999px;
+  font-size:10.5px;letter-spacing:.3em;color:#f0dcb4;
+  background:linear-gradient(180deg,rgba(216,181,113,.14),rgba(216,181,113,.02));
+}
+.hero .en{margin-top:22px;font-size:11px;letter-spacing:.52em;color:var(--gold);opacity:.85}
+.hero h1{
+  margin-top:16px;font-family:var(--serif);font-weight:800;letter-spacing:3px;
+  font-size:35px;line-height:1.28;text-shadow:0 2px 26px rgba(216,181,113,.22);
+}
+.hero h1 em{display:block;font-style:normal;font-size:15px;letter-spacing:6px;margin-top:14px;font-weight:400}
+.hero .theme{
+  margin:26px auto 0;max-width:330px;padding:14px 16px;position:relative;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  font-family:var(--serif);font-size:16px;letter-spacing:2px;color:#f2e4c8;line-height:1.7;
+}
+.hero .meta{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:24px}
+.chip{
+  display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:999px;
+  border:1px solid var(--line);background:rgba(255,255,255,.045);
+  font-size:12.5px;color:#e6eefb;backdrop-filter:blur(4px);
+}
+.chip b{color:var(--gold-lt);font-weight:600}
+.chip svg{width:13px;height:13px;stroke:var(--gold);fill:none;stroke-width:1.6}
+.hero .scroll{margin-top:34px;font-size:11px;letter-spacing:.24em;color:var(--muted);animation:float 2.6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0);opacity:.6}50%{transform:translateY(7px);opacity:1}}
+
+/* 印章 */
+.seal{
+  position:absolute;right:22px;top:190px;width:76px;height:76px;transform:rotate(-9deg);
+  border:2px solid rgba(165,30,48,.9);border-radius:10px;color:#c9384a;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  font-family:var(--serif);font-size:15px;font-weight:800;letter-spacing:2px;line-height:1.15;
+  box-shadow:0 0 0 1px rgba(165,30,48,.25) inset,0 6px 24px rgba(165,30,48,.22);
+  background:rgba(165,30,48,.08);opacity:.95;
+}
+
+/* ---------- 邀请辞 ---------- */
+.letter{
+  position:relative;margin:8px 0 0;padding:30px 22px 26px;border:1px solid var(--line);
+  background:linear-gradient(165deg,rgba(255,255,255,.055),rgba(255,255,255,.012));
+  border-radius:4px;
+}
+.letter::before,.letter::after{
+  content:"";position:absolute;width:16px;height:16px;border:1px solid var(--gold);opacity:.75;
+}
+.letter::before{left:-1px;top:-1px;border-right:0;border-bottom:0}
+.letter::after{right:-1px;bottom:-1px;border-left:0;border-top:0}
+.letter p{font-size:14.5px;color:#d3ddf0;text-indent:2em;text-align:justify;line-height:2.05}
+.letter p + p{margin-top:12px}
+.letter .sign{margin-top:20px;text-align:right;font-family:var(--serif);font-size:13px;color:var(--gold-lt);letter-spacing:1px}
+
+/* ---------- 倒计时 ---------- */
+.count{
+  margin-top:30px;padding:24px 18px;border-radius:6px;text-align:center;
+  background:linear-gradient(180deg,rgba(216,181,113,.10),rgba(216,181,113,.02));
+  border:1px solid var(--line);
+}
+.count .t{font-size:11.5px;letter-spacing:.3em;color:var(--gold)}
+.count .num{display:flex;justify-content:center;gap:10px;margin-top:16px}
+.count .num div{
+  min-width:62px;padding:10px 6px;border-radius:4px;background:rgba(6,12,24,.55);
+  border:1px solid rgba(216,181,113,.22);
+}
+.count .num b{display:block;font-family:var(--serif);font-size:27px;line-height:1.1;color:#fff3d9;font-weight:700}
+.count .num span{display:block;margin-top:4px;font-size:10.5px;color:var(--muted);letter-spacing:.1em}
+.count .tip{margin-top:14px;font-size:12px;color:#c2d0e6}
+.count .tip b{color:var(--gold-lt)}
+
+/* ---------- 价值卡 ---------- */
+.cards{display:flex;flex-direction:column;gap:14px;margin-top:26px}
+.card{
+  position:relative;padding:20px 20px 20px 62px;border:1px solid rgba(255,255,255,.075);border-radius:5px;
+  background:linear-gradient(150deg,rgba(255,255,255,.055),rgba(255,255,255,.012));
+  overflow:hidden;
+}
+.card::after{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:2px;
+  background:linear-gradient(180deg,var(--gold-lt),rgba(216,181,113,0));
+}
+.card .ico{
+  position:absolute;left:18px;top:20px;width:30px;height:30px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(160deg,rgba(216,181,113,.28),rgba(216,181,113,.06));
+  border:1px solid rgba(216,181,113,.3);
+}
+.card .ico svg{width:16px;height:16px;stroke:#f6e5c0;fill:none;stroke-width:1.5}
+.card h3{font-family:var(--serif);font-size:17.5px;letter-spacing:1px;color:#fff3dc;font-weight:700}
+.card p{margin-top:8px;font-size:13.5px;color:#bfcde4;line-height:1.85}
+.card .tag{
+  display:inline-block;margin-top:12px;padding:3px 10px;border-radius:3px;font-size:11px;
+  color:#0c1424;background:linear-gradient(100deg,#e6c88a,#f7e8c4);font-weight:700;letter-spacing:.5px;
+}
+
+/* ---------- 五位一体 ---------- */
+.penta{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:24px}
+.penta div{
+  padding:14px 0;text-align:center;border:1px solid var(--line);border-radius:4px;
+  background:rgba(255,255,255,.035);font-family:var(--serif);font-size:16px;color:#f3e6c8;
+}
+.penta div span{display:block;margin-top:4px;font-family:var(--sans);font-size:10px;color:var(--muted);letter-spacing:.1em}
+
+/* ---------- 议程 ---------- */
+.agenda{margin-top:24px;border-left:1px solid var(--line);padding-left:18px}
+.ag-item{position:relative;padding:0 0 22px}
+.ag-item::before{
+  content:"";position:absolute;left:-24px;top:8px;width:11px;height:11px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#fff4dc,var(--gold-dp));
+  box-shadow:0 0 0 4px rgba(216,181,113,.12);
+}
+.ag-time{font-family:var(--serif);font-size:14px;color:var(--gold-lt);letter-spacing:1px}
+.ag-time small{display:inline-block;margin-right:8px;font-size:11px;color:var(--muted);letter-spacing:.1em}
+.ag-txt{margin-top:5px;font-size:13.5px;color:#cbd7ec;line-height:1.8}
+.ag-item.hl .ag-txt{color:#fff0d2}
+
+/* ---------- 参会对象 ---------- */
+.tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+.tags span{
+  padding:8px 13px;border-radius:999px;font-size:12.5px;color:#dbe5f5;
+  border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);
+}
+.tags span.on{border-color:var(--line);color:#f7e8c4;background:linear-gradient(180deg,rgba(216,181,113,.16),rgba(216,181,113,.03))}
+
+/* ---------- 费用 ---------- */
+.fee{margin-top:24px;border:1px solid var(--line);border-radius:5px;overflow:hidden;background:rgba(255,255,255,.035)}
+.fee-row{display:flex;align-items:stretch;border-bottom:1px solid rgba(255,255,255,.07)}
+.fee-row:last-child{border-bottom:0}
+.fee-row .k{
+  width:88px;flex:none;padding:16px 10px;text-align:center;font-family:var(--serif);font-size:14px;
+  color:#f5e6c4;background:rgba(216,181,113,.10);border-right:1px solid rgba(255,255,255,.07);
+  display:flex;align-items:center;justify-content:center;
+}
+.fee-row .v{padding:14px 14px;font-size:13px;color:#c6d3e8;line-height:1.8}
+.fee-row .v b{color:#ffeec6}
+.free{color:#8ef0b8 !important;font-weight:700}
+
+/* ---------- 报名 ---------- */
+.join{margin-top:26px;padding:26px 22px;border-radius:6px;border:1px solid var(--line);
+  background:linear-gradient(170deg,rgba(30,58,110,.42),rgba(8,16,32,.5))}
+.join ol{margin:16px 0 0;padding-left:18px}
+.join li{font-size:13.5px;color:#cdd9ee;margin-bottom:10px;line-height:1.8}
+.join li b{color:#f7e8c4}
+.join .mail{
+  margin-top:18px;padding:12px 14px;border-radius:4px;text-align:center;
+  background:rgba(216,181,113,.10);border:1px dashed rgba(216,181,113,.45);
+  font-size:14px;color:#fff3d9;letter-spacing:.5px;
+}
+.people{display:flex;gap:10px;margin-top:18px}
+.people a{
+  flex:1;text-decoration:none;padding:13px 8px;border-radius:4px;text-align:center;
+  border:1px solid var(--line);background:rgba(255,255,255,.05);
+}
+.people a b{display:block;font-size:15px;color:#fff3d9;font-family:var(--serif);letter-spacing:1px}
+.people a span{display:block;margin-top:3px;font-size:11px;color:var(--muted)}
+
+/* ---------- 单位 ---------- */
+.orgs{margin-top:22px}
+.orgs .grp{margin-bottom:18px}
+.orgs .lbl{font-size:11.5px;letter-spacing:.28em;color:var(--gold);margin-bottom:10px}
+.orgs .names{display:flex;flex-wrap:wrap;gap:8px}
+.orgs .names i{
+  font-style:normal;font-size:12.5px;color:#dce6f6;padding:7px 12px;border-radius:3px;
+  background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);
+}
+
+/* ---------- 页脚 ---------- */
+.foot{position:relative;z-index:2;text-align:center;padding:46px 24px 130px}
+.foot .l1{font-family:var(--serif);font-size:19px;letter-spacing:3px;color:#f2e3c2}
+.foot .l2{margin-top:12px;font-size:12px;color:var(--muted);line-height:1.9}
+.foot .stamp{margin-top:26px;display:flex;justify-content:center;gap:10px}
+.foot .stamp i{
+  font-style:normal;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);color:var(--gold);font-family:var(--serif);font-size:14px;
+  background:rgba(216,181,113,.08);
+}
+
+/* ---------- 底部 CTA ---------- */
+.dock{
+  position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;justify-content:center;
+  padding:0 12px calc(12px + env(safe-area-inset-bottom));
+  pointer-events:none;
+}
+.dock-in{
+  pointer-events:auto;max-width:456px;width:100%;display:flex;gap:10px;align-items:center;
+  padding:10px;border-radius:14px;
+  background:rgba(9,17,33,.86);backdrop-filter:blur(14px);
+  border:1px solid rgba(216,181,113,.28);
+  box-shadow:0 10px 34px rgba(0,0,0,.55);
+}
+.dock-in .txt{flex:1;padding-left:6px}
+.dock-in .txt b{display:block;font-size:13.5px;color:#fff3d9;letter-spacing:.5px}
+.dock-in .txt span{display:block;font-size:11px;color:var(--muted);margin-top:2px}
+.dock-in a{
+  text-decoration:none;padding:11px 18px;border-radius:10px;font-size:14px;font-weight:700;letter-spacing:1px;
+  color:#12161f;background:linear-gradient(100deg,#e3c385,#fff2d4 45%,#cfa358);
+  box-shadow:0 4px 16px rgba(216,181,113,.32);
+}
+.dock-in a.gh{
+  color:#f3e4c2;background:transparent;border:1px solid rgba(216,181,113,.5);box-shadow:none;font-weight:600;
+}
+@media (max-width:360px){
+  .hero h1{font-size:31px}
+  .count .num div{min-width:54px}
+}
+
+/* Responsive registration: no external dependencies. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{overflow-wrap:break-word}
+a{touch-action:manipulation}
+a:focus-visible{outline:2px solid #f7e8c4;outline-offset:4px}
+.stage{width:100%;min-width:0}
+.wrap{padding-left:16px;padding-right:16px;padding-left:clamp(14px,4.8vw,24px);padding-right:clamp(14px,4.8vw,24px)}
+.card,.letter,.join,.mail,.addr,.orgs,.fee-row .v{overflow-wrap:anywhere;min-width:0}
+.signup-btn{display:flex;align-items:center;justify-content:center;gap:12px;min-height:48px;padding:12px 18px;border-radius:5px;background:linear-gradient(135deg,#f8ecc9,#dfbd7c 55%,#b98c3c);color:#23160a;text-decoration:none;font-size:16px;font-weight:700;line-height:1.5;box-shadow:0 6px 20px rgba(217,178,106,.18)}
+.hero-signup{max-width:280px;margin:26px auto 0}
+.online-signup{padding-bottom:24px;margin-bottom:24px;border-bottom:1px solid var(--line);text-align:center}
+.online-title{font-size:20px;color:var(--gold-lt);font-weight:700}
+.online-signup p{margin:8px 0 18px;font-size:14px;color:#c9d3e7}
+.rv,.reveal{opacity:1;transform:none}
+@supports(padding:max(0px)){
+ .wrap{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv,.reveal{opacity:1;transform:none}}
+@media(max-height:500px) and (orientation:landscape){.hero{padding-top:24px;padding-bottom:24px}}
+
+.hero{padding-top:44px}
+.hero h1{font-size:26px;font-size:clamp(20px,6.2vw,29px);letter-spacing:.02em}
+.hero .topmark{max-width:100%;font-size:10px;padding:6px 10px;letter-spacing:.12em}
+.hero .en{letter-spacing:.3em}
+.hero .theme{font-size:15px;letter-spacing:.06em;padding:14px 8px}
+.hero .seal{position:relative;top:auto;right:auto;margin:26px auto 0;width:62px;height:62px;font-size:14px}
+.hero .chip{max-width:100%;padding:8px 10px;min-width:0;flex-wrap:wrap;justify-content:center}
+.chip svg{flex-shrink:0}
+.count{padding:22px 12px}.count .num{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.count .num div{min-width:0;padding:10px 2px}.count .num b{font-size:24px}
+.sec-t{font-size:23px;letter-spacing:1px}
+.people{flex-wrap:wrap}.people a{flex:1 1 125px;min-width:0;min-height:48px}.people a span{font-size:12px}
+.penta{gap:5px;grid-template-columns:repeat(5,minmax(0,1fr))}
+.dock{padding:0 12px 12px;padding-bottom:calc(12px + env(safe-area-inset-bottom))}
+.dock-in{gap:8px;background:rgba(9,17,33,.97)}
+.dock-in .txt{min-width:0;padding-left:0}.dock-in .txt b{font-size:12px;letter-spacing:0}
+.dock-in a{display:flex;align-items:center;justify-content:center;flex-shrink:0;min-height:48px;padding:10px 14px;letter-spacing:0;line-height:1.5}
+.foot{padding-bottom:180px;padding-bottom:calc(var(--dock-height,156px) + 24px)}
+@media(max-width:400px){.dock-in{display:grid;grid-template-columns:1fr 76px}.dock-in .txt{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px}.dock-in .txt span{margin:0}.join,.letter{padding:22px 16px}.fee-row{display:block}.fee-row .k{width:100%;justify-content:flex-start;border-right:0;padding:10px 14px}.card{padding-right:14px}.eyebrow{letter-spacing:.15em}.eyebrow::before,.eyebrow::after{width:16px}}
+</style>
+</head>
+<body>
+
+<div class="stage">
+  <!-- 背景层 -->
+  <div class="bg">
+    <div class="beam"></div>
+    <div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div>
+    <div class="grid"></div>
+    <div class="noise"></div>
+  </div>
+  <div class="particles" id="pt"></div>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <div class="wrap">
+      <div class="topmark rv">2026 · 中国·哈尔滨 · 全国性行业盛会</div>
+      <div class="en rv d1">INVITATION</div>
+      <h1 class="rv d2">
+        <span class="gold-text">首届全国精英<br>校企产教融合高峰论坛</span>
+        <em class="gold-text">邀 请 函</em>
+      </h1>
+      <div class="theme rv d3">深化产教融合，<br>促进校企协同与人才供需对接</div>
+      <div class="meta rv d4">
+        <div class="chip">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/></svg>
+          <b>11月18日</b>（周三）
+        </div>
+        <div class="chip">
+          <svg viewBox="0 0 24 24"><path d="M12 21s7-6.3 7-11a7 7 0 10-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          哈尔滨·远东理工智能制造有限公司
+        </div>
+      </div>
+      <a class="signup-btn hero-signup" href="https://www.wjx.top/vm/tUmGSkG.aspx">院校参会 · 立即报名 <span aria-hidden="true">→</span></a>
+<div class="scroll rv d5">— 向上滑动，查看会议全貌 —</div>
+    </div>
+    <div class="seal">诚邀<br>莅临</div>
+  </header>
+
+  <!-- ============ 邀请辞 ============ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="eyebrow rv">致 院 校 领 导</div>
+      <div class="divider rv"></div>
+      <div class="letter rv d1">
+        <p>为深入贯彻落实国家关于深化产教融合、校企合作的决策部署，破解人才培养与产业需求脱节的核心难题，搭建校企协同育人、共谋发展的高端交流平台，我们联合全国各企业、各高校，定于 <b style="color:#ffeec6">2026年11月18日（周三）</b> 在哈尔滨举办"首届全国精英校企产教融合高峰论坛"。</p>
+        <p>现诚挚邀请贵校莅临参会，共探合作路径，共筑发展生态。</p>
+        <div class="sign">高峰论坛会务组　谨邀</div>
+      </div>
+
+      <!-- 倒计时 -->
+      <div class="count rv d2">
+        <div class="t">距 论 坛 开 幕</div>
+        <div class="num">
+          <div><b id="d1">--</b><span>DAYS</span></div>
+          <div><b id="d2">--</b><span>HOURS</span></div>
+          <div><b id="d3">--</b><span>MINS</span></div>
+          <div><b id="d4">--</b><span>SECS</span></div>
+        </div>
+        <div class="tip">报名截止 <b>2026年11月16日 17:00</b>　·　名额有限，报满即止</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 四大赋能 ============ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="eyebrow rv">CORE VALUE</div>
+      <h2 class="sec-t rv d1">四大核心赋能<br><span class="gold-text">为院校带来可落地的合作成果</span></h2>
+      <p class="sec-lead rv d2">紧扣新时代产教融合、校企协同发展政策导向，聚焦校企合作落地、项目资金申报、产教模式创新三大核心议题。</p>
+
+      <div class="cards">
+        <div class="card rv d1">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M7 10v5c0 1.7 2.2 3 5 3s5-1.3 5-3v-5"/><path d="M21 7v6"/></svg></div>
+          <h3>共建订单班 · 产业学院</h3>
+          <p>引入知名企业先进技术与人才，落地在校技能实操项目，提升学生综合素质与能力，为学生提供优质实习与就业岗位。</p>
+          <span class="tag">学生高质量就业</span>
+        </div>
+
+        <div class="card rv d2">
+          <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M7 10h.01M17 14h.01"/></svg></div>
+          <h3>政策与资金赋能</h3>
+          <p>现场解读产教融合专项补贴申报、银行信贷、产业资本对接实操路径，助力学校申报国家级、省级产教融合专项资金。</p>
+          <span class="tag">专项资金申报</span>
+        </div>
+
+        <div class="card rv d3">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 12h6m0 0l-3-3m3 3l-3 3"/><path d="M20 12h-6m0 0l3-3m-3 3l3 3"/></svg></div>
+          <h3>一对一商务对接</h3>
+          <p>与投资方、企业深度洽谈，快速锁定合作意向并现场签约，一次参会对接全国优质企业资源。</p>
+          <span class="tag">现场签约</span>
+        </div>
+
+        <div class="card rv d4">
+          <div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M9 9h6v6H9z"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg></div>
+          <h3>赋能院校 AI 升级</h3>
+          <p>依托人工智能技术为学校培养数智化人才，助力教学科研创新，为学院整体升级夯实基础。</p>
+          <span class="tag">数智化人才培养</span>
+        </div>
+      </div>
+
+      <div class="penta rv d2">
+        <div>政<span>GOV</span></div>
+        <div>银<span>BANK</span></div>
+        <div>校<span>SCHOOL</span></div>
+        <div>企<span>ENTERPRISE</span></div>
+        <div>资<span>CAPITAL</span></div>
+      </div>
+      <p class="sec-lead rv d3" style="text-align:center;margin-top:12px">五位一体高端对接平台 · 可落地、可复制、可持续的产教融合解决方案</p>
+    </div>
+  </section>
+
+  <!-- ============ 议程 ============ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="eyebrow rv">AGENDA</div>
+      <h2 class="sec-t rv d1">会议议程<br><span class="gold-text">11月17日 — 11月19日</span></h2>
+
+      <div class="agenda">
+        <div class="ag-item rv"><div class="ag-time"><small>11/17</small>13:00 — 20:00</div><div class="ag-txt">报到与会务接待</div></div>
+        <div class="ag-item rv hl"><div class="ag-time"><small>11/18</small>08:30 — 08:50</div><div class="ag-txt">开幕式；主办方致辞及相关嘉宾发言</div></div>
+        <div class="ag-item rv hl"><div class="ag-time"><small>11/18</small>08:50 — 09:30</div><div class="ag-txt">主题交流：校企合作模式、产业学院运营与利益分配、项目申报及融资对接</div></div>
+        <div class="ag-item rv hl"><div class="ag-time"><small>11/18</small>09:30 — 11:50</div><div class="ag-txt">重点企业、院校及校企产教融合项目介绍</div></div>
+        <div class="ag-item rv"><div class="ag-time"><small>11/18</small>11:50 — 12:10</div><div class="ag-txt">合影留念</div></div>
+        <div class="ag-item rv"><div class="ag-time"><small>11/18</small>12:10 — 13:30</div><div class="ag-txt">午餐及休息</div></div>
+        <div class="ag-item rv hl"><div class="ag-time"><small>11/18</small>13:30 — 15:30</div><div class="ag-txt">重点企业、院校产教融合项目路演与案例分享</div></div>
+        <div class="ag-item rv"><div class="ag-time"><small>11/18</small>15:30 — 15:50</div><div class="ag-txt">茶歇、展位交流与自由对接</div></div>
+        <div class="ag-item rv hl"><div class="ag-time"><small>11/18</small>15:50 — 16:50</div><div class="ag-txt">融资需求咨询；院校、企业与投资方洽谈</div></div>
+        <div class="ag-item rv hl"><div class="ag-time"><small>11/18</small>16:50 — 17:30</div><div class="ag-txt">产教融合基地参观；大学生实习就业对接及校企合作项目签约</div></div>
+        <div class="ag-item rv"><div class="ag-time"><small>11/19</small>08:30 — 17:30</div><div class="ag-txt">外省代表参观哈尔滨相关景点、重点合作企业或学校</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 参会对象 ============ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="eyebrow rv">WHO SHOULD ATTEND</div>
+      <h2 class="sec-t rv d1">参会对象<br><span class="gold-text">一次链接全国产教资源</span></h2>
+      <div class="tags rv d2">
+        <span class="on">政府主管部门领导</span>
+        <span class="on">银行及金融机构负责人</span>
+        <span class="on">各类院校校领导</span>
+        <span class="on">二级学院院长</span>
+        <span class="on">就业与校企合作负责人</span>
+        <span>企业董事长 / 总经理</span>
+        <span>人力资源负责人</span>
+        <span>创投机构与投资方</span>
+        <span>商协会代表</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 费用 ============ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="eyebrow rv">REGISTRATION FEE</div>
+      <h2 class="sec-t rv d1">费用说明<br><span class="gold-text">普通参会 免收会务费</span></h2>
+      <div class="fee rv d2">
+        <div class="fee-row">
+          <div class="k">普通参会</div>
+          <div class="v"><b class="free">免费，含 2 人</b>；超过 2 人，每增加 1 人 300 元<br>含论坛当天午餐及会务资料费用；住宿、额外餐饮及 11 月 19 日考察费用另计（680 元/人，自愿参加）。</div>
+        </div>
+        <div class="fee-row">
+          <div class="k">路演单位</div>
+          <div class="v">11 月 18 日上午 <b>5000 元</b>；其他时段 <b>3000 元</b>，限 10 家；或提供论坛现场用餐赞助，每家含 6 人<br>含精英平台服务二年（价值 3960 元）、一年产教融合服务、赞助单位专属席位、10 分钟项目/案例分享、现场播放学校宣传片。</div>
+        </div>
+      </div>
+      <p class="sec-lead rv d3" style="margin-top:14px;font-size:12.5px">退费说明：开幕前 3—14 天（含）申请取消，退还会务费 70%；开幕前 2 天内临时取消或无故缺席不予退费，名额可免费转让同单位人员使用。</p>
+    </div>
+  </section>
+
+  <!-- ============ 报名 ============ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="eyebrow rv">HOW TO JOIN</div>
+      <h2 class="sec-t rv d1">报名与参会<br><span class="gold-text">三步完成参会报名</span></h2>
+
+      <div class="join rv d2"><div class="online-signup"><div class="online-title serif">院校参会 · 在线报名</div><p>点击下方按钮，前往问卷星填写报名信息。</p><a class="signup-btn" href="https://www.wjx.top/vm/tUmGSkG.aspx">填写院校报名表 <span aria-hidden="true">→</span></a></div>
+        <ol>
+          <li><b>会议地点：</b>哈尔滨远东理工智能制造有限公司（哈尔滨市阿城区阿什河街道松峰大街 12 号）。需接站请在回执中勾选，由承办方统一安排车辆接送。</li>
+          <li><b>报名截止：</b>2026 年 11 月 16 日 17:00，名额有限，报满即止。</li>
+          <li><b>报名材料：</b>填写《院校报名回执表》并加盖公章，将可编辑版（Word）、盖章扫描件（PDF／JPG）、学校简介及 2026—2027 届毕业生安置情况发送至会务组邮箱。</li>
+        </ol>
+        <div class="mail">会务组邮箱　78723829@qq.com<br><span style="font-size:11.5px;color:#c6d3e8">邮件主题请注明"学校名称 + 参会报名"</span></div>
+        <div class="people">
+          <a href="tel:15810543188"><b>李老师</b><span>15810543188（同微信）</span></a>
+          <a href="tel:18246108135"><b>范老师</b><span>18246108135</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 组织机构 ============ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="eyebrow rv">ORGANIZERS</div>
+      <h2 class="sec-t rv d1">组织机构<br><span class="gold-text">全国资源 · 联合发起</span></h2>
+      <div class="orgs">
+        <div class="grp rv d1">
+          <div class="lbl">主 办 单 位</div>
+          <div class="names"><i>丁香集团</i><i>精英投资（海南）集团有限公司</i><i>北京羲和餐饮管理股份有限公司</i></div>
+        </div>
+        <div class="grp rv d2">
+          <div class="lbl">承 办 单 位</div>
+          <div class="names"><i>哈尔滨远东理工学院</i><i>海南省精英智能科技有限公司</i></div>
+        </div>
+        <div class="grp rv d3">
+          <div class="lbl">协 办 单 位</div>
+          <div class="names"><i>黑龙江绿色食品协会</i><i>中企会人力资源公司</i><i>北京未来企业家促进会</i><i>北京高校 OPC 社区</i><i>北京母婴服务协会</i><i>金艳骊集团公司</i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 页脚 ============ -->
+  <footer class="foot">
+    <div class="l1 gold-text serif">共探合作路径　共筑发展生态</div>
+    <div class="l2">
+      首届全国精英校企产教融合高峰论坛 · 会务组<br>
+      2026 年 10 月 18 日
+    </div>
+    <div class="stamp"><i>校</i><i>企</i><i>共</i><i>赢</i></div>
+  </footer>
+</div>
+
+<!-- 底部悬浮 -->
+<div class="dock">
+  <div class="dock-in">
+    <div class="txt">
+      <b>报名截止 11月16日 17:00</b>
+      <span>名额有限　报满即止</span>
+    </div>
+    <a class="btn" href="https://www.wjx.top/vm/tUmGSkG.aspx">院校报名</a>
+    <a class="gh" href="tel:15810543188">咨询</a>
+  </div>
+</div>
+
+<script>
+/* 粒子 */
+(function(){
+  var box=document.getElementById('pt'),n=18;
+  for(var i=0;i<n;i++){
+    var s=document.createElement('i');
+    var size=2+Math.random()*3;
+    s.style.width=size+'px';s.style.height=size+'px';
+    s.style.left=(Math.random()*100)+'%';
+    s.style.animationDuration=(11+Math.random()*12)+'s';
+    s.style.animationDelay=(Math.random()*14)+'s';
+    box.appendChild(s);
+  }
+})();
+
+/* 滚动入场 */
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(list){
+    list.forEach(function(en){
+      if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}
+    });
+  },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+
+/* 倒计时：2026-11-18 08:30 */
+(function(){
+  var end=new Date("2026-11-18T08:30:00+08:00").getTime();
+  var id=['d1','d2','d3','d4'];
+  function pad(v){return v<10?'0'+v:''+v}
+  function tick(){
+    var diff=end-Date.now();
+    if(diff<0)diff=0;
+    var d=Math.floor(diff/86400000);
+    var h=Math.floor(diff%86400000/3600000);
+    var m=Math.floor(diff%3600000/60000);
+    var s=Math.floor(diff%60000/1000);
+    var arr=[d,h,m,s];
+    for(var i=0;i<4;i++){document.getElementById(id[i]).textContent=pad(arr[i]);}
+  }
+  tick();setInterval(tick,1000);
+})();
+</script>
+<script>
+(function(){
+ var bar=document.querySelector('.dock')||document.querySelector('.cta');
+ function fit(){document.documentElement.style.setProperty('--dock-height',Math.ceil(bar.getBoundingClientRect().height)+'px');}
+ fit();window.addEventListener('resize',fit);
+ if('ResizeObserver' in window){new ResizeObserver(fit).observe(bar);}
+})();
+</script>
+</body>
+</html>
